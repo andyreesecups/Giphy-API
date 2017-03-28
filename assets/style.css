@@ -1,3 +1,38 @@
 header {
-	margin: 50px;
+	margin: 5px;
+}
+
+form {
+	color: black;
+}
+
+#submit {
+	color: black;
+}
+
+p {
+	color: white;
+}
+
+
+#buttonBox {
+	width: 75%;
+	height: 150px;
+	border: 1px solid black;
+	margin-left: 150px;
+	padding: 5px;
+}
+
+body {
+	background-image: url("https://static.pexels.com/photos/361726/pexels-photo-361726.jpeg");
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+
+#animalView {
+	width: 400px;
+	margin-top: 25px;
+	padding: 20px;
+	margin-left: 200px;
+	color: white;
 }

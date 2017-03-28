@@ -24,14 +24,14 @@ $(document).ready(function() {
 
 
     }
-    // the displayGifs function will display the giphy's 
+    // This function displays the giphy's  
     function displayGifs() {
 
         // Emptying the "animalView" div 
         $("#animalView").empty();
         var animal = $(this).attr("data-animal");
         // Creating an AJAX call for the specific movie button being clicked
-        //There is a limit of ten as you can see in the queryURL
+        // There is a limit of ten as you can see in the queryURL
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
             animal + "&api_key=dc6zaTOxFJmzC&limit=10";
         $.ajax({
@@ -40,9 +40,9 @@ $(document).ready(function() {
         }).done(function(response) {
             var results = response.data;
 
-            //loop through results
+            // Loop through results
             for (var i = 0; i < results.length; i++) {
-                //create div to store animal gifs
+                // Create div to store animal gifs
                 var animalDiv = $("<div>");
                 var p = $("<p>");
                 p.html("rating: " + results[i].rating);
@@ -50,7 +50,7 @@ $(document).ready(function() {
                 var animalImage = $("<img>");
                 // Add class of "gif-image" to the element animalImage
                 animalImage.addClass("gif-image");
-                //Giving the image tag an src attribute of a property pulled off the result item
+                // Giving the image tag an src attribute of a property pulled off the result item
                 animalImage.attr("src", results[i].images.fixed_height_still.url);
                 animalImage.attr("data-state", "still");
                 animalImage.attr("data-still", results[i].images.fixed_height_still.url);
@@ -64,7 +64,7 @@ $(document).ready(function() {
             }
         });
     }
-    // This if/else statement is what makes the giphy's be able to pause and play-----------------------------------
+    // This if/else statement is what makes the giphy's able to play and be paused -----------------------------------
     // If the data-state = "still" when user clicks, then turn to "animate"
     $("#animalView").on("click", ".gif-image", function() {
         if ($(this).attr("data-state") === "still") {
@@ -76,6 +76,6 @@ $(document).ready(function() {
             $(this).attr("data-state", "still");
         }
     });
-    
+
     $(document).on("click", ".buttonAppear", displayGifs);
 });

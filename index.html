@@ -9,16 +9,19 @@
 </head>
 
 <body>
-    <div id="buttonView">
+    <div id="buttonBox">
+        <div id="buttonView">
+        </div>
+        <header>
+            <form>
+                <p>Type an animal you like and click the submit button:
+                    <br> Click on the button to see the giphys!</p>
+                <input id="searchbar" type="text" name="searchbar">
+                <br>
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </header>
     </div>
-    <header>
-        <form>
-            Type an animal you like and click the submit button:
-            <input id="searchbar" type="text" name="searchbar">
-            <br>
-            <input id="submit" type="submit" value="Submit">
-        </form>
-    </header>
     <div id="animalView">
     </div>
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
